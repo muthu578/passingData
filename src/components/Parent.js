@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
 import Child1 from './Child1';
 class Parent extends Component{
-    value="Value From Parent";
+   ParentFunction = (data_from_child) => {
+       console.log(data_from_child)
+   }
+    
     render(){
         return(
-            <div>
-                <Child1 valueFromParent={this.value}/>
+            <div>      
+                <Child1 functionCallFromParent={this.ParentFunction.bind(this)}/>
             </div>
         );
     }
